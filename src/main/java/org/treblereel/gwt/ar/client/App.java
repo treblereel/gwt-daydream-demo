@@ -34,11 +34,8 @@ import org.treblereel.gwt.three4g.renderers.WebGLRenderer;
 import org.treblereel.gwt.three4g.renderers.parameters.WebGLRendererParameters;
 import org.treblereel.gwt.three4g.scenes.Scene;
 
-import java.util.Arrays;
 import java.util.Random;
-import java.util.logging.Logger;
 
-import static elemental2.dom.DomGlobal.alert;
 import static elemental2.dom.DomGlobal.document;
 import static elemental2.dom.DomGlobal.window;
 
@@ -47,7 +44,6 @@ import static elemental2.dom.DomGlobal.window;
  */
 public class App implements EntryPoint {
 
-    private Logger logger = Logger.getLogger(App.class.getSimpleName());
     private HTMLDivElement container;
 
     private WebGLRenderer renderer;
@@ -111,8 +107,6 @@ public class App implements EntryPoint {
         renderer = new WebGLRenderer(parameters);
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.vr.enabled = true;
-
-        alert("is enable ? " + renderer.vr.enabled);
 
         container.appendChild(renderer.domElement);
         container.appendChild(WebVR.createButton(renderer));
